@@ -1,4 +1,5 @@
 export * from "./breadcrumbs";
+export * from "./confirm-panel";
 export * from "./button";
 export * from "./documents-section";
 export * from "./field";

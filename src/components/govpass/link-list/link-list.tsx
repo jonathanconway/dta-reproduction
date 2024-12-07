@@ -1,3 +1,4 @@
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { ReactNode } from "react";
 
@@ -15,14 +16,16 @@ export function LinkList({ children }: LinkListProps) {
 interface LinkListItemProps {
   readonly children: ReactNode;
   readonly href: string;
+  readonly isDone: boolean;
 }
 
-export function LinkListItem({ children, href }: LinkListItemProps) {
+export function LinkListItem({ children, href, isDone }: LinkListItemProps) {
   return (
-    <Styled.LinkListItem>
+    <Styled.LinkListItem isDone={isDone}>
       <Link to={href}>
         <Styled.LinkListItemMain>{children}</Styled.LinkListItemMain>
-        <ChevronRightIcon />
+
+        {isDone ? <CheckCircleIcon /> : <ChevronRightIcon />}
       </Link>
     </Styled.LinkListItem>
   );

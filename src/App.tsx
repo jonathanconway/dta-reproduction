@@ -1,12 +1,10 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Route, Routes } from "react-router";
 import "./App.css";
-import { GovPass, govPassPath } from "./govpass";
+import { GovPass, PassportDetails, PassportConfirm } from "./govpass";
+
+import { routes } from "./routes";
 import { Switchboard } from "./switchboard";
-import {
-  EnterPassportDetails,
-  enterPassportDetailsPath,
-} from "./govpass/identity-documents/enter-passport-details";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
@@ -14,12 +12,16 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
-        <Route path="/" element={<Switchboard />} />
+        <Route path={routes.switchboard} element={<Switchboard />} />
         <Route
-          path={enterPassportDetailsPath}
-          element={<EnterPassportDetails />}
+          path={routes.govpass.identityDocuments.passportDetails.index}
+          element={<PassportDetails />}
         />
-        <Route path={govPassPath} element={<GovPass />} />
+        <Route
+          path={routes.govpass.identityDocuments.passportConfirm.index}
+          element={<PassportConfirm />}
+        />
+        <Route path={routes.govpass.index} element={<GovPass />} />
       </Routes>
     </QueryClientProvider>
   );

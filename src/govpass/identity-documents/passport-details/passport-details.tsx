@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import {
   Breadcrumb,
   Breadcrumbs,
@@ -10,12 +11,12 @@ import {
   InputTextBox,
   Link,
 } from "../../../components";
+import { routes } from "../../../routes";
 import { GovPassLayout } from "../../govpass-layout";
 
-export const enterPassportDetailsPath =
-  "/govpass/identity-documents/enter-passport-details";
+export function PassportDetails() {
+  const navigate = useNavigate();
 
-export function EnterPassportDetails() {
   return (
     <GovPassLayout>
       <Breadcrumbs>
@@ -28,7 +29,7 @@ export function EnterPassportDetails() {
 
       <Form>
         <img
-          src="/govpass/identity-documents/enter-passport-details.png"
+          src={`${routes.govpass.identityDocuments.passportDetails.index}.png`}
           alt="Diagram indicating name as shown on passport"
           width="350px"
         />
@@ -50,7 +51,14 @@ export function EnterPassportDetails() {
         />
 
         <div>
-          <Button>Next</Button>
+          <Button
+            type="button"
+            onClick={() => {
+              navigate(routes.govpass.identityDocuments.passportConfirm.index);
+            }}
+          >
+            Next
+          </Button>
         </div>
       </Form>
     </GovPassLayout>

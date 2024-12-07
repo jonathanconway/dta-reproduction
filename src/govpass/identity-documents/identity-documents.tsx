@@ -1,4 +1,5 @@
 import { DocumentsSection, LinkList, LinkListItem } from "../../components";
+import { routes } from "../../routes";
 
 export function IdentityDocuments() {
   return (
@@ -8,14 +9,27 @@ export function IdentityDocuments() {
         remainingRequiredDocsCount={2}
       >
         <LinkList>
-          <LinkListItem href="/govpass/identity-documents/enter-passport-details">
+          <LinkListItem
+            href={routes.govpass.identityDocuments.passportDetails.index}
+            isDone
+          >
             Australian passport
           </LinkListItem>
-          <LinkListItem href="">Driver's licence</LinkListItem>
-          <LinkListItem href="">Citizenship certificate</LinkListItem>
-          <LinkListItem href="">ImmiCard</LinkListItem>
-          <LinkListItem href="">Visa grant letter</LinkListItem>
-          <LinkListItem href="">Birth certificate</LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            Driver's licence
+          </LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            Citizenship certificate
+          </LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            ImmiCard
+          </LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            Visa grant letter
+          </LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            Birth certificate
+          </LinkListItem>
         </LinkList>
       </DocumentsSection>
 
@@ -24,9 +38,15 @@ export function IdentityDocuments() {
         remainingRequiredDocsCount={1}
       >
         <LinkList>
-          <LinkListItem href="">Medicare card</LinkListItem>
-          <LinkListItem href="">Change of name certificate</LinkListItem>
-          <LinkListItem href="">Marriage certificate</LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            Medicare card
+          </LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            Change of name certificate
+          </LinkListItem>
+          <LinkListItem href="" isDone={false}>
+            Marriage certificate
+          </LinkListItem>
         </LinkList>
       </DocumentsSection>
     </>
