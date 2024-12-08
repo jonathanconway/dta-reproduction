@@ -21,7 +21,7 @@ interface LinkListItemProps {
 
 export function LinkListItem({ children, href, isDone }: LinkListItemProps) {
   return (
-    <Styled.LinkListItem isDone={isDone}>
+    <Styled.LinkListItem $isDone={isDone}>
       <Link to={href}>
         <Styled.LinkListItemMain>{children}</Styled.LinkListItemMain>
 

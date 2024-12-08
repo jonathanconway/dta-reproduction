@@ -1,12 +1,11 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { Route, Routes } from "react-router";
 import "./App.css";
-import { GovPass, PassportDetails, PassportConfirm } from "./govpass";
+import { GovPass, PassportConfirm, PassportDetails } from "./govpass";
 
+import { queryClient } from "./query-client";
 import { routes } from "./routes";
 import { Switchboard } from "./switchboard";
-
-const queryClient = new QueryClient();
 
 function App() {
   return (

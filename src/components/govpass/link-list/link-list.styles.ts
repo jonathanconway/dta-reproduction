@@ -10,16 +10,16 @@ export const LinkList = styled.ul`
 `;
 
 const LinkListItemA = css<{
-  readonly isDone: boolean;
+  readonly $isDone: boolean;
 }>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
 
-  ${({ isDone }) => `
+  ${({ $isDone }) => `
   ${
-    isDone
+    $isDone
       ? `
         background-color: #EAF8EC;
   `
@@ -36,9 +36,9 @@ const LinkListItemA = css<{
   color: ${theme.primary};
   line-height: 1.5rem;
 
-  ${({ isDone }) => `
+  ${({ $isDone }) => `
   ${
-    isDone
+    $isDone
       ? `
 
   `
@@ -58,7 +58,7 @@ const LinkListItemA = css<{
 `;
 
 export const LinkListItem = styled.li<{
-  readonly isDone: boolean;
+  readonly $isDone: boolean;
 }>`
   a {
     ${LinkListItemA}

@@ -6,9 +6,9 @@ import {
   Heading,
   Link,
   LinkList,
-} from "../../../components";
-import { routes } from "../../../routes";
-import { GovPassLayout } from "../../govpass-layout";
+} from "../../../../components";
+import { routes } from "../../../../routes";
+import { GovPassLayout } from "../../../govpass-layout";
 
 export function PassportConfirm() {
   return (
@@ -52,7 +52,9 @@ export function PassportConfirm() {
 
       <Breadcrumbs>
         <Breadcrumb>
-          <Link to="/govpass">Back</Link>
+          <Link to={routes.govpass.identityDocuments.passportDetails.index}>
+            Back
+          </Link>
         </Breadcrumb>
       </Breadcrumbs>
     </GovPassLayout>
