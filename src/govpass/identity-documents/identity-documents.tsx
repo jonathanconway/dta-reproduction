@@ -1,8 +1,13 @@
 import { DocumentsSection, LinkList, LinkListItem } from "../../components";
-import { routes } from "../../routes";
+import { paths } from "../../paths";
 import { isPassportDocumentCompleted } from "./identity-documents-state";
+import { useIdentityDocuments } from "./use-identity-documents";
 
 export function IdentityDocuments() {
+  const {
+    data: { passportDocument },
+  } = useIdentityDocuments();
+
   return (
     <>
       <DocumentsSection
@@ -11,8 +16,8 @@ export function IdentityDocuments() {
       >
         <LinkList>
           <LinkListItem
-            href={routes.govpass.identityDocuments.passportDetails.index}
-            isDone={isPassportDocumentCompleted()}
+            href={paths.govpass.identityDocuments.passportNumber.fullPath}
+            isDone={isPassportDocumentCompleted(passportDocument)}
           >
             Australian passport
           </LinkListItem>

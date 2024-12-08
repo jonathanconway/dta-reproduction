@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "DTA Reproduction",
+  "name": "Reproduction of some prototypes built for the DTA",
   "icons": [
     {
       "src": "favicon.ico",

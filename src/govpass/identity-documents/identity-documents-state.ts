@@ -1,4 +1,4 @@
-import { PassportDocument } from "./passport";
+import { PassportDocument } from "./passport-document";
 
 export type IdentityDocumentsState = {
   readonly passportDocument: Partial<PassportDocument>;
@@ -14,6 +14,7 @@ export function isPassportDocumentCompleted(
   return Boolean(
     passportDocument?.passportNumber &&
       passportDocument?.familyName &&
-      passportDocument?.givenNames
+      passportDocument?.givenNames &&
+      passportDocument?.dateOfBirth
   );
 }

@@ -12,10 +12,10 @@ import {
   InputTextBox,
   Link,
 } from "../../../../components";
-import { routes } from "../../../../routes";
+import { paths } from "../../../../paths";
 import { FormElement } from "../../../../utils";
-import { GovPassLayout } from "../../../govpass-layout";
 import { useIdentityDocuments } from "../../use-identity-documents";
+import { passportFlow } from "../passport-flow";
 
 interface PassportDetailsForm {
   readonly givenNames: string;
@@ -46,14 +46,16 @@ export function PassportDetails() {
       },
     });
 
-    navigate(routes.govpass.identityDocuments.passportConfirm.index);
+    navigate(passportFlow.passportDetails.next);
   };
 
   return (
-    <GovPassLayout>
+    <>
       <Breadcrumbs>
         <Breadcrumb>
-          <Link to="/govpass">Back</Link>
+          <Link to={paths.govpass.identityDocuments.passportNumber.fullPath}>
+            Back
+          </Link>
         </Breadcrumb>
       </Breadcrumbs>
 
@@ -61,7 +63,7 @@ export function PassportDetails() {
 
       <Form onSubmit={handleSubmit}>
         <img
-          src={`${routes.govpass.identityDocuments.passportDetails.index}.png`}
+          src={`${paths.govpass.identityDocuments.passportDetails.fullPath}.png`}
           alt="Diagram indicating name as shown on passport"
           width="350px"
         />
@@ -90,6 +92,6 @@ export function PassportDetails() {
           <Button>Next</Button>
         </div>
       </Form>
-    </GovPassLayout>
+    </>
   );
 }

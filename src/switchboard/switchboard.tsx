@@ -1,10 +1,10 @@
 import { Link } from "react-router";
-import { routes } from "../routes";
+import { paths } from "../paths";
 
 export function Switchboard() {
   return (
     <div>
-      <Link to={routes.govpass.index}>GovPass</Link>
+      <Link to={paths.govpass.fullPath}>GovPass</Link>
     </div>
   );
 }

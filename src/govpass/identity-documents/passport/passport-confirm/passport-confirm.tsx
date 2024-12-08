@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import {
   Breadcrumb,
   Breadcrumbs,
@@ -7,39 +8,51 @@ import {
   Link,
   LinkList,
 } from "../../../../components";
-import { routes } from "../../../../routes";
-import { GovPassLayout } from "../../../govpass-layout";
+import { paths } from "../../../../paths";
+import { useIdentityDocuments } from "../../use-identity-documents";
 
 export function PassportConfirm() {
+  const navigate = useNavigate();
+
+  const {
+    data: {
+      passportDocument: { passportNumber, familyName, givenNames, dateOfBirth },
+    },
+  } = useIdentityDocuments();
+
+  const handleConfirmClick = () => {
+    navigate(paths.govpass.identityDocuments.fullPath);
+  };
+
   return (
-    <GovPassLayout>
+    <>
       <Heading level={1}>Confirm your details</Heading>
       <Heading level={2}>Australian Passport</Heading>
 
       <LinkList>
         <ConfirmPanel
           titleSlot={<Heading level={3}>Passport number</Heading>}
-          valueSlot="M0998532"
+          valueSlot={passportNumber}
           changeSlot={
-            <Link to={routes.govpass.identityDocuments.passportDetails.index}>
+            <Link to={paths.govpass.identityDocuments.passportNumber.fullPath}>
               Change
             </Link>
           }
         />
         <ConfirmPanel
           titleSlot={<Heading level={3}>Name</Heading>}
-          valueSlot="Chen Sam Francis"
+          valueSlot={`${givenNames} ${familyName}`}
           changeSlot={
-            <Link to={routes.govpass.identityDocuments.passportDetails.index}>
+            <Link to={paths.govpass.identityDocuments.passportDetails.fullPath}>
               Change
             </Link>
           }
         />
         <ConfirmPanel
           titleSlot={<Heading level={3}>Date of birth</Heading>}
-          valueSlot="24 / 03 / 78"
+          valueSlot={dateOfBirth}
           changeSlot={
-            <Link to={routes.govpass.identityDocuments.passportDetails.index}>
+            <Link to={paths.govpass.identityDocuments.passportDate.fullPath}>
               Change
             </Link>
           }
@@ -47,16 +60,16 @@ export function PassportConfirm() {
       </LinkList>
 
       <div>
-        <Button>Confirm details</Button>
+        <Button onClick={handleConfirmClick}>Confirm details</Button>
       </div>
 
       <Breadcrumbs>
         <Breadcrumb>
-          <Link to={routes.govpass.identityDocuments.passportDetails.index}>
+          <Link to={paths.govpass.identityDocuments.passportDetails.fullPath}>
             Back
           </Link>
         </Breadcrumb>
       </Breadcrumbs>
-    </GovPassLayout>
+    </>
   );
 }

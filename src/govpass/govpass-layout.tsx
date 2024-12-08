@@ -1,16 +1,14 @@
-import { ReactNode } from "react";
+import { Outlet } from "react-router";
 import { Footer, Header, Main } from "../components";
 
-interface GovPassLayoutProps {
-  readonly children?: ReactNode;
-}
-
-export function GovPassLayout(props: GovPassLayoutProps) {
+export function GovPassLayout() {
   return (
-    <div>
+    <>
       <Header />
-      <Main>{props.children}</Main>
+      <Main>
+        <Outlet />
+      </Main>
       <Footer />
-    </div>
+    </>
   );
 }
