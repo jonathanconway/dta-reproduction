@@ -7,6 +7,12 @@ const pathsDefinition = {
       passportDetails: {},
       passportDate: {},
       passportConfirm: {},
+
+      driversLicenceState: {},
+      driversLicenceNumber: {},
+      driversLicenceDetails: {},
+      driversLicenceDate: {},
+      driversLicenceConfirm: {},
     },
   },
 };

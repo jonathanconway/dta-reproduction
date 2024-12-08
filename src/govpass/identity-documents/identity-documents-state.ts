@@ -1,20 +1,12 @@
-import { PassportDocument } from "./passport-document";
+import { DriversLicenceDocument } from "./drivers-licence/drivers-licence-document";
+import { PassportDocument } from "./passport/passport-document";
 
-export type IdentityDocumentsState = {
+export interface IdentityDocumentsState {
   readonly passportDocument: Partial<PassportDocument>;
-};
+  readonly driversLicenceDocument: Partial<DriversLicenceDocument>;
+}
 
 export const DEFAULT_IDENTITY_DOCUMENTS_STATE = {
   passportDocument: {},
+  driversLicenceDocument: {},
 };
-
-export function isPassportDocumentCompleted(
-  passportDocument?: Partial<PassportDocument>
-) {
-  return Boolean(
-    passportDocument?.passportNumber &&
-      passportDocument?.familyName &&
-      passportDocument?.givenNames &&
-      passportDocument?.dateOfBirth
-  );
-}

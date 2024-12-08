@@ -1,4 +1,4 @@
-import { PassportDocument } from "../passport-document";
+import { PassportDocument } from "./passport-document";
 import { useIdentityDocuments } from "../use-identity-documents";
 
 export function usePassportDocument() {
@@ -11,7 +11,7 @@ export function usePassportDocument() {
     });
   }
 
-  const { passportDocument } = data;
+  const { passportDocument = {} } = data;
 
   return {
     passportDocument,

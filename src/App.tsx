@@ -4,13 +4,18 @@ import "./App.css";
 
 import {
   GovPass,
+  GovPassLayout,
   IdentityDocuments,
   PassportConfirm,
   PassportDate,
   PassportDetails,
   PassportNumber,
+  DriversLicenceNumber,
+  DriversLicenceState,
+  DriversLicenceDate,
+  DriversLicenceDetails,
+  DriversLicenceConfirm,
 } from "./govpass";
-import { GovPassLayout } from "./govpass/govpass-layout";
 import { paths } from "./paths";
 import { queryClient } from "./query-client";
 
@@ -24,6 +29,7 @@ function App() {
             path={paths.govpass.identityDocuments.fullPath}
             Component={IdentityDocuments}
           />
+
           <Route
             path={paths.govpass.identityDocuments.passportNumber.fullPath}
             Component={PassportNumber}
@@ -39,6 +45,31 @@ function App() {
           <Route
             path={paths.govpass.identityDocuments.passportConfirm.fullPath}
             Component={PassportConfirm}
+          />
+
+          <Route
+            path={paths.govpass.identityDocuments.driversLicenceState.fullPath}
+            Component={DriversLicenceState}
+          />
+          <Route
+            path={paths.govpass.identityDocuments.driversLicenceNumber.fullPath}
+            Component={DriversLicenceNumber}
+          />
+          <Route
+            path={
+              paths.govpass.identityDocuments.driversLicenceDetails.fullPath
+            }
+            Component={DriversLicenceDetails}
+          />
+          <Route
+            path={paths.govpass.identityDocuments.driversLicenceDate.fullPath}
+            Component={DriversLicenceDate}
+          />
+          <Route
+            path={
+              paths.govpass.identityDocuments.driversLicenceConfirm.fullPath
+            }
+            Component={DriversLicenceConfirm}
           />
         </Route>
       </Routes>
