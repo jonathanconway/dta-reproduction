@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const DocumentsSection = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 40rem;
 `;
 
 export const DocumentsSectionHeader = styled.div`
@@ -11,9 +12,8 @@ export const DocumentsSectionHeader = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  & > * {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+  & > h2 {
+    margin: 0;
   }
 `;
 

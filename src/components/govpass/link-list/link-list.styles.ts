@@ -60,6 +60,7 @@ const LinkListItemA = css<{
 export const LinkListItem = styled.li<{
   readonly $isDone: boolean;
 }>`
+  list-style: none none;
   a {
     ${LinkListItemA}
   }

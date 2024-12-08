@@ -7,7 +7,7 @@ type LinkProps = Parameters<typeof ReactRouterLink>[0];
 export function Link(props: LinkProps) {
   return (
     <Styled.Link>
-      <ReactRouterLink className="" {...props} />
+      <ReactRouterLink {...props} />
     </Styled.Link>
   );
 }

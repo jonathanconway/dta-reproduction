@@ -4,7 +4,7 @@ export const ConfirmPanel = styled.div`
   display: flex;
   flex-direction: row;
   background-color: #eff3f5;
-
+  min-width: 20rem;
   padding: 1rem 1.5rem;
 
   h3 {
